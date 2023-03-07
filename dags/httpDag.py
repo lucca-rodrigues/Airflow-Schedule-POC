@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.http_operator import SimpleHttpOperator
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
-import logging
+# from logging import logging
 
 default_args = {
     'owner': 'airflow',
@@ -28,7 +28,7 @@ responseData = ""
 
 call_task = SimpleHttpOperator(
     task_id='server_node',
-    # http_conn_id='nome_conexao_pokemon_2',
+    http_conn_id='nome_conexao_pokemon_2', # Opctional
     # endpoint=api_url,
     endpoint="",
     method='GET',
@@ -40,7 +40,7 @@ call_task = SimpleHttpOperator(
 store_task = BashOperator(
     task_id='store_external_data',
     bash_command='echo {{ task_instance.xcom_pull(task_ids="server_node") }}',
-    logging.info("output", )
+    # logging.info("output")
     dag=dag,
 )
 
