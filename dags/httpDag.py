@@ -16,6 +16,7 @@ dag = DAG(
     'http_request_dag',
     default_args=default_args,
     description='Chama uma API externa',
+    # tag=['tagHere'],
     # schedule_interval=timedelta(minutes=1),
     # schedule_interval=timedelta(hours=1),
 )
