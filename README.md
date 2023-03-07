@@ -16,6 +16,8 @@ docker compose up
 
 - After this, you can access the airflow dashboard at http://localhost:8080
 
+- The default username and password are both `airflow`
+
 <img src=".github/docs/airflow-login.png" width="100%">
 
 <img src=".github/docs/airflow-dash.png" width="100%">
